@@ -1,0 +1,9 @@
+{
+  "appId": "cc.incy.proxy",
+  "appName": "NovaProxy",
+  "webDir": "dist",
+  "backgroundColor": "#121316",
+  "server": {
+    "androidScheme": "https"
+  }
+}

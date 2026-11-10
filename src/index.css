@@ -1,0 +1,310 @@
+@import "tailwindcss";
+
+:root, [data-theme="dark"] {
+  --theme-bg-app: #121316;
+  --theme-bg-sidebar: #151619;
+  --theme-bg-header: #121316;
+  --theme-bg-card: #1c1c1e;
+  --theme-bg-card-hover: #222327;
+  --theme-bg-subtle: #242528;
+  --theme-border-card: #2c2c2e;
+  --theme-border-divider: #28282b;
+  --theme-border-subtle: #38383c;
+  --theme-text-primary: #ffffff;
+  --theme-text-secondary: #868e9b;
+  --theme-text-muted: #626875;
+  --theme-accent: #3b82f6;
+  --theme-accent-hover: #60a5fa;
+  --theme-accent-bg: rgba(59, 130, 246, 0.15);
+  --theme-accent-border: rgba(59, 130, 246, 0.4);
+}
+
+[data-theme="light"] {
+  --theme-bg-app: #f4f5f8;
+  --theme-bg-sidebar: #ffffff;
+  --theme-bg-header: #f8fafc;
+  --theme-bg-card: #ffffff;
+  --theme-bg-card-hover: #f1f5f9;
+  --theme-bg-subtle: #e2e8f0;
+  --theme-border-card: #e2e8f0;
+  --theme-border-divider: #edf2f7;
+  --theme-border-subtle: #cbd5e1;
+  --theme-text-primary: #0f172a;
+  --theme-text-secondary: #475569;
+  --theme-text-muted: #64748b;
+  --theme-accent: #2563eb;
+  --theme-accent-hover: #1d4ed8;
+  --theme-accent-bg: rgba(37, 99, 235, 0.1);
+  --theme-accent-border: rgba(37, 99, 235, 0.35);
+}
+
+[data-theme="green"] {
+  --theme-bg-app: #080d09;
+  --theme-bg-sidebar: #0e1610;
+  --theme-bg-header: #080d09;
+  --theme-bg-card: #121d14;
+  --theme-bg-card-hover: #18271a;
+  --theme-bg-subtle: #1c2e1f;
+  --theme-border-card: #1f3523;
+  --theme-border-divider: #192b1c;
+  --theme-border-subtle: #29462e;
+  --theme-text-primary: #f0fdf4;
+  --theme-text-secondary: #86efac;
+  --theme-text-muted: #4ade80;
+  --theme-accent: #22c55e;
+  --theme-accent-hover: #4ade80;
+  --theme-accent-bg: rgba(34, 197, 94, 0.15);
+  --theme-accent-border: rgba(34, 197, 94, 0.4);
+}
+
+[data-theme="oled"] {
+  --theme-bg-app: #000000;
+  --theme-bg-sidebar: #050505;
+  --theme-bg-header: #000000;
+  --theme-bg-card: #0c0c0e;
+  --theme-bg-card-hover: #141416;
+  --theme-bg-subtle: #18181b;
+  --theme-border-card: #1c1c1f;
+  --theme-border-divider: #161618;
+  --theme-border-subtle: #27272a;
+  --theme-text-primary: #ffffff;
+  --theme-text-secondary: #a1a1aa;
+  --theme-text-muted: #71717a;
+  --theme-accent: #3b82f6;
+  --theme-accent-hover: #60a5fa;
+  --theme-accent-bg: rgba(59, 130, 246, 0.15);
+  --theme-accent-border: rgba(59, 130, 246, 0.4);
+}
+
+/* Dynamic Theme Utilities */
+.bg-theme-app { background-color: var(--theme-bg-app) !important; }
+.bg-theme-sidebar { background-color: var(--theme-bg-sidebar) !important; }
+.bg-theme-header { background-color: var(--theme-bg-header) !important; }
+.bg-theme-card { background-color: var(--theme-bg-card) !important; }
+.bg-theme-card-hover:hover { background-color: var(--theme-bg-card-hover) !important; }
+.bg-theme-subtle { background-color: var(--theme-bg-subtle) !important; }
+.border-theme-card { border-color: var(--theme-border-card) !important; }
+.border-theme-divider { border-color: var(--theme-border-divider) !important; }
+.border-theme-subtle { border-color: var(--theme-border-subtle) !important; }
+.text-theme-primary { color: var(--theme-text-primary) !important; }
+.text-theme-secondary { color: var(--theme-text-secondary) !important; }
+.text-theme-muted { color: var(--theme-text-muted) !important; }
+.text-theme-accent { color: var(--theme-accent) !important; }
+.border-theme-accent { border-color: var(--theme-accent) !important; }
+
+/* ==========================================================================
+   Comprehensive Light Theme Overrides (Resolves all light-mode contrast bugs)
+   ========================================================================== */
+[data-theme="light"] {
+  color: #0f172a;
+}
+
+/* 1. Dark containers become clean light cards */
+[data-theme="light"] .bg-zinc-900,
+[data-theme="light"] .bg-zinc-900\/90,
+[data-theme="light"] .bg-zinc-900\/80,
+[data-theme="light"] .bg-zinc-900\/70,
+[data-theme="light"] .bg-zinc-900\/60,
+[data-theme="light"] .bg-zinc-900\/50,
+[data-theme="light"] .bg-zinc-950,
+[data-theme="light"] .bg-zinc-950\/90,
+[data-theme="light"] .bg-zinc-950\/80,
+[data-theme="light"] .bg-zinc-950\/60,
+[data-theme="light"] .bg-\[\#121316\],
+[data-theme="light"] .bg-\[\#181e17\],
+[data-theme="light"] .bg-\[\#0e120e\],
+[data-theme="light"] .bg-\[\#121712\],
+[data-theme="light"] .bg-\[\#0c100c\],
+[data-theme="light"] .bg-\[\#131911\],
+[data-theme="light"] .bg-\[\#141a12\] {
+  background-color: #ffffff !important;
+  color: #0f172a;
+}
+
+[data-theme="light"] .bg-zinc-800,
+[data-theme="light"] .bg-zinc-800\/90,
+[data-theme="light"] .bg-zinc-800\/80,
+[data-theme="light"] .bg-zinc-800\/60,
+[data-theme="light"] .bg-zinc-850,
+[data-theme="light"] .bg-\[\#151c14\],
+[data-theme="light"] .bg-\[\#1c2e1f\] {
+  background-color: #f1f5f9 !important;
+  color: #0f172a;
+}
+
+/* 2. Dark borders become crisp modern borders */
+[data-theme="light"] .border-zinc-700,
+[data-theme="light"] .border-zinc-700\/90,
+[data-theme="light"] .border-zinc-700\/80,
+[data-theme="light"] .border-zinc-700\/70,
+[data-theme="light"] .border-zinc-750,
+[data-theme="light"] .border-zinc-800,
+[data-theme="light"] .border-zinc-850,
+[data-theme="light"] .border-\[\#212b1e\],
+[data-theme="light"] .border-\[\#1e271a\],
+[data-theme="light"] .border-\[\#222d1e\],
+[data-theme="light"] .border-\[\#222c1f\] {
+  border-color: #e2e8f0 !important;
+}
+
+/* 3. Text adaptations in light mode (No more invisible white headers!) */
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .text-white {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .text-zinc-300 {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .text-zinc-400 {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .text-zinc-500 {
+  color: #94a3b8 !important;
+}
+
+[data-theme="light"] .text-\[\#8b9987\],
+[data-theme="light"] .text-\[\#7d8d7b\],
+[data-theme="light"] .text-\[\#6e7b6c\] {
+  color: #475569 !important;
+}
+
+/* 4. Action buttons & badges MUST preserve bright white text & colors */
+[data-theme="light"] .bg-emerald-500,
+[data-theme="light"] .bg-emerald-600,
+[data-theme="light"] .bg-teal-500,
+[data-theme="light"] .bg-teal-600,
+[data-theme="light"] .bg-blue-600,
+[data-theme="light"] .bg-blue-500,
+[data-theme="light"] .bg-rose-500,
+[data-theme="light"] .bg-rose-600,
+[data-theme="light"] [class*="bg-gradient-to-"] {
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .bg-emerald-500 *,
+[data-theme="light"] .bg-emerald-600 *,
+[data-theme="light"] .bg-teal-500 *,
+[data-theme="light"] .bg-teal-600 *,
+[data-theme="light"] .bg-blue-600 *,
+[data-theme="light"] .bg-blue-500 *,
+[data-theme="light"] .bg-rose-500 *,
+[data-theme="light"] .bg-rose-600 *,
+[data-theme="light"] [class*="bg-gradient-to-"] * {
+  color: #ffffff !important;
+}
+
+/* 5. Inputs, textareas and selects in light mode */
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] select,
+[data-theme="light"] option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] select,
+[data-theme="dark"] option,
+[data-theme="oled"] select,
+[data-theme="oled"] option {
+  background-color: #1c1c1e !important;
+  color: #ffffff !important;
+}
+
+[data-theme="green"] select,
+[data-theme="green"] option {
+  background-color: #121d14 !important;
+  color: #f0fdf4 !important;
+}
+
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* 6. Sidebar, Navigation and Cards */
+[data-theme="light"] aside,
+[data-theme="light"] nav {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+body {
+  background-color: var(--theme-bg-app);
+  color: var(--theme-text-primary);
+  font-family: 'Plus Jakarta Sans', 'Cairo', system-ui, -apple-system, sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+  overflow: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Ensure all form inputs, textareas and editable areas can always be focused and typed into */
+input, textarea, select, [contenteditable="true"] {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--theme-bg-app);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--theme-border-subtle);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-text-muted);
+}
+
+/* Draggable window area for Electron */
+.titlebar-drag {
+  -webkit-app-region: drag;
+}
+
+.titlebar-no-drag {
+  -webkit-app-region: no-drag;
+}
+
+/* Android TV D-Pad Remote Control & Keyboard Focus Indicators */
+:focus-visible {
+  outline: 3px solid var(--theme-accent) !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.5) !important;
+  transition: transform 0.15s ease, outline 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+button:focus-visible,
+[role="button"]:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--theme-accent) !important;
+  outline-offset: 3px !important;
+  transform: scale(1.03) !important;
+  z-index: 20;
+}
+
+/* TV screen overscan safe padding */
+@media (min-width: 1024px) and (min-aspect-ratio: 16/9) {
+  body {
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+  }
+}

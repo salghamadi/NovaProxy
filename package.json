@@ -1,0 +1,51 @@
+{
+  "name": "novaproxy",
+  "version": "4.2.5",
+  "description": "NovaProxy Client - High Performance Proxy & VPN",
+  "main": "electron/main.cjs",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "electron .",
+    "electron:dev": "concurrently -k \"vite\" \"electron .\"",
+    "build:apk": "vite build && npx cap sync android && cd android && .\\gradlew.bat assembleDebug && cd .. && copy android\\app\\build\\outputs\\apk\\debug\\app-debug.apk INCY-Proxy-v3.9.0.apk"
+  },
+  "keywords": [
+    "vless",
+    "reality",
+    "vmess",
+    "trojan",
+    "hysteria2",
+    "xray",
+    "sing-box",
+    "vpn",
+    "proxy",
+    "incy"
+  ],
+  "author": "NovaProxy Team",
+  "license": "MIT",
+  "dependencies": {
+    "@capacitor/android": "^8.6.0",
+    "@capacitor/cli": "^8.6.0",
+    "@capacitor/core": "^8.6.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.16.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.0.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.2",
+    "electron": "^34.2.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.3",
+    "vite": "^8.3.6"
+  }
+}
